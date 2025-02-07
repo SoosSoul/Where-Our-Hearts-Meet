@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Captured Love</title>
+    <link
+      rel="stylesheet"
+      href="/Where-Our-Hearts-Meet/Captured_Love/Styles/Style.css"
+    />
+    <link
+      rel="icon"
+      type="image/gif"
+      href="/Where-Our-Hearts-Meet/Captured_Love/Images/Icon.gif"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="hamburger" id="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="nav-links" id="nav-links">
+        <a href="/Where-Our-Hearts-Meet/Our_Story_Begins/Index.html"
+          >Soul's Heart</a
+        >
+        <a href="/Where-Our-Hearts-Meet/Cupids_Way/Index.html">Cupid's Way</a>
+        <a href="/Where-Our-Hearts-Meet/Love_Notes/Index.html">Love Notes</a>
+        <a href="/Where-Our-Hearts-Meet/Melody_Of_Love/Index.html"
+          >Melody Of Love</a
+        >
+        <a href="/Where-Our-Hearts-Meet/Eternal_Vow/Index.html">Eternal Vow</a>
+      </div>
+    </nav>
+
+    <div class="custom-cursor"></div>
+
+    <audio id="background-music" autoplay loop muted>
+      <source
+        src="/Where-Our-Hearts-Meet/Captured_Love/Audios/Audio.mp3"
+        type="audio/mpeg"
+      />
+      <source
+        src="/Where-Our-Hearts-Meet/Captured_Love/Audios/Audio.ogg"
+        type="audio/ogg"
+      />
+      <source
+        src="/Where-Our-Hearts-Meet/Captured_Love/Audios/Audio.wav"
+        type="audio/wav"
+      />
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="slider-container">
+      <div class="slide active" id="firstSlide">
+        <h1>I Love You Mwah</h1>
+      </div>
+      <img
+        src="/Where-Our-Hearts-Meet/Captured_Love/Images/LoveRose.png"
+        class="slide"
+      />
+      <img
+        src="/Where-Our-Hearts-Meet/Captured_Love/Images/LoveRose.png"
+        class="slide"
+      />
+      <img
+        src="/Where-Our-Hearts-Meet/Captured_Love/Images/LoveRose.png"
+        class="slide"
+      />
+      <img
+        src="/Where-Our-Hearts-Meet/Captured_Love/Images/LoveRose.png"
+        class="slide"
+      />
+    </div>
+
+    <div class="controls">
+      <button id="prevBtn">← Previous</button>
+      <button id="nextBtn">Next →</button>
+    </div>
+
+    <script src="/Where-Our-Hearts-Meet/Captured_Love/Scripts/Script.js"></script>
+
+    <script>
+      document.body.addEventListener("click", function () {
+        var audio = document.getElementById("background-music");
+        audio.muted = false;
+        audio.play().catch(function (error) {
+          console.log("Autoplay failed:", error);
+        });
+      });
+    </script>
+  </body>
+</html>
