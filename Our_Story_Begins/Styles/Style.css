@@ -1,0 +1,257 @@
+/* 
+   Merged Styling - Original Content with Navbar from First File
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Press Start 2P", cursive;
+  background: #ffdde1
+    url("/Where-Our-Hearts-Meet/Our_Story_Begins/Images/Background.jpeg")
+    no-repeat center center;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  color: white;
+  overflow-x: hidden;
+  font-size: 18px;
+  animation: fadeIn 2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  flex-direction: column;
+}
+
+body,
+a,
+button,
+input,
+:hover,
+textarea {
+  cursor: none !important;
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background: url("/Where-Our-Hearts-Meet/Our_Story_Begins/Images/Icon.gif")
+    no-repeat center;
+  background-size: contain;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: transform 0.1s ease-out;
+}
+
+body:active .custom-cursor {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* --- NAVBAR STYLING COPIED FROM FIRST FILE --- */
+.navbar {
+  font-family: "Press Start 2P", cursive;
+  position: fixed;
+  top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background-color: #ff7f92;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ff7f92;
+  background-color: rgba(255, 127, 146, 0.2);
+  transform: scale(1.1);
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger - Mobile Only (From First File) */
+.hamburger {
+  display: none; /* Hidden on desktop */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 2000; /* Higher than nav-links */
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px; /* Larger hit area */
+}
+
+.hamburger .line {
+  width: 30px;
+  height: 3px;
+  background: white;
+  transition: all 0.3s ease;
+  pointer-events: none; /* Let clicks pass to the parent hamburger div */
+}
+/* --- END OF NAVBAR STYLING FROM FIRST FILE --- */
+
+.header {
+  font-size: 2.5rem;
+  line-height: 1.6;
+  animation: slideUp 1s ease-out;
+  z-index: 5;
+  margin-top: 80px;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: #ff7f92;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #fefefe;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  line-height: 1.8;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.romantic-touch {
+  font-size: 1.2rem;
+  color: #ff7f92;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-top: 30px;
+  animation: fadeIn 3s ease-in-out;
+}
+
+::selection {
+  background-color: #ff7f92;
+  color: white;
+}
+
+::-moz-selection {
+  background-color: #ff7f92;
+  color: white;
+}
+
+/* Mobile Responsiveness (Merged logic) */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 107, 107, 0.98);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    transition: left 0.3s ease-in-out;
+    z-index: 1500;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .navbar a {
+    font-size: 18px;
+    width: 80%;
+    text-align: center;
+  }
+
+  /* Hamburger Animation */
+  .hamburger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active .line:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .romantic-touch {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 0.9rem;
+  }
+
+  .romantic-touch {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love Notes</title>
+    <link
+      rel="stylesheet"
+      href="/Where-Our-Hearts-Meet/Love_Notes/Styles/Style.css"
+    />
+    <link
+      rel="icon"
+      type="image/gif"
+      href="/Where-Our-Hearts-Meet/Love_Notes/Images/Icon.gif"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="hamburger" id="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="nav-links" id="nav-links">
+        <a href="/Where-Our-Hearts-Meet/Our_Story_Begins/Index.html"
+          >Izzeldeen's Heart</a
+        >
+        <a href="/Where-Our-Hearts-Meet/Cupids_Way/Index.html">Cupid's Way</a>
+        <a href="/Where-Our-Hearts-Meet/Captured_Love/Index.html"
+          >Captured Love</a
+        >
+        <a href="/Where-Our-Hearts-Meet/Melody_Of_Love/Index.html"
+          >Melody Of Love</a
+        >
+        <a href="/Where-Our-Hearts-Meet/Eternal_Vow/Index.html">Eternal Vow</a>
+      </div>
+    </nav>
+
+    <div class="custom-cursor"></div>
+
+    <audio id="background-music" autoplay loop muted>
+      <source
+        src="/Where-Our-Hearts-Meet/Love_Notes/Audios/Audio.mp3"
+        type="audio/mpeg"
+      />
+      <source
+        src="/Where-Our-Hearts-Meet/Love_Notes/Audios/Audio.ogg"
+        type="audio/ogg"
+      />
+      <source
+        src="/Where-Our-Hearts-Meet/Love_Notes/Audios/Audio.wav"
+        type="audio/wav"
+      />
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="container">
+      <div class="valentines">
+        <div class="envelope"></div>
+        <div class="front"></div>
+        <div class="card">
+          <div class="text">
+            Every moment with you <br />
+            is a dream come true.<br />
+            I'm so lucky to have you.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="/Where-Our-Hearts-Meet/Love_Notes/Scripts/Script.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("nav-links");
+
+        if (hamburger && navLinks) {
+          hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            hamburger.classList.toggle("active");
+          });
+        }
+
+        document.body.addEventListener("click", function () {
+          var audio = document.getElementById("background-music");
+          audio.muted = false;
+          audio.play().catch(function (error) {
+            console.log("Autoplay failed:", error);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

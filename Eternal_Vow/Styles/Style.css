@@ -1,0 +1,275 @@
+/* 
+   Eternal Vow - Fixed Hamburger & Responsiveness
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Brush Script MT", cursive;
+  background: #ffdde1
+    url("/Where-Our-Hearts-Meet/Eternal_Vow/Images/Background.jpeg") no-repeat
+    center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  cursor: none !important;
+}
+
+body,
+a,
+button,
+input,
+:hover,
+textarea {
+  cursor: none !important;
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background: url("/Where-Our-Hearts-Meet/Eternal_Vow/Images/Icon.gif")
+    no-repeat center;
+  background-size: contain;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: transform 0.1s ease-out;
+}
+
+body:active .custom-cursor {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+/* Navbar - Desktop */
+.navbar {
+  font-family: "Press Start 2P", cursive;
+  position: fixed;
+  top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background-color: #ff7f92;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ff7f92;
+  background-color: rgba(255, 127, 146, 0.2);
+  transform: scale(1.1);
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger - Mobile Only */
+.hamburger {
+  display: none; /* Hidden on desktop */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 2000; /* Higher than nav-links */
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px; /* Larger hit area */
+}
+
+.hamburger .line {
+  width: 30px;
+  height: 3px;
+  background: white;
+  transition: all 0.3s ease;
+  pointer-events: none; /* Let clicks pass to the parent hamburger div */
+}
+
+/* Container */
+.container {
+  background: linear-gradient(to bottom, #ff7f92, #ff6f8a);
+  color: white;
+  padding: 40px;
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  border: 6px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin: 80px 20px 40px;
+  border-radius: 15px;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+.decor-top-left,
+.decor-top-right,
+.decor-bottom-left,
+.decor-bottom-right {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: url("/Where-Our-Hearts-Meet/Eternal_Vow/Images/Design.png")
+    no-repeat center;
+  background-size: contain;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+.decor-top-left {
+  top: 5px;
+  left: 5px;
+  transform: rotate(90deg);
+}
+.decor-top-right {
+  top: 5px;
+  right: 5px;
+  transform: rotate(180deg);
+}
+.decor-bottom-left {
+  bottom: 5px;
+  left: 5px;
+  transform: rotate(360deg);
+}
+.decor-bottom-right {
+  bottom: 5px;
+  right: 5px;
+  transform: rotate(270deg);
+}
+
+h1 {
+  font-size: 24px;
+  margin: 20px 0;
+  font-family: "Press Start 2P", cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+h1 img {
+  height: 80px;
+  width: auto;
+}
+
+.pinkRose {
+  width: 100px;
+  margin: 0 auto 10px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 15px 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 107, 107, 0.98);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    transition: left 0.3s ease-in-out;
+    z-index: 1500;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .navbar a {
+    font-size: 18px;
+    width: 80%;
+    text-align: center;
+  }
+
+  /* Hamburger Animation */
+  .hamburger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active .line:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+
+  .container {
+    padding: 30px 15px;
+    margin-top: 70px;
+  }
+
+  h1 {
+    font-size: 16px;
+  }
+  h1 img {
+    height: 60px;
+  }
+  p {
+    font-size: 16px;
+  }
+
+  .decor-top-left,
+  .decor-top-right,
+  .decor-bottom-left,
+  .decor-bottom-right {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+::selection {
+  background-color: #ff7f92;
+  color: white;
+}

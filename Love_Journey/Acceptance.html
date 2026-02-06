@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="/Where-Our-Hearts-Meet/Love_Journey/Styles/Acceptance.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/gif"
+      href="/Where-Our-Hearts-Meet/Love_Journey/Images/Icon.gif"
+    />
+    <title>The Love Journey Begins</title>
+
+    <style>
+      body {
+        background: #ffdde1
+          url("/Where-Our-Hearts-Meet/Love_Journey/Images/Background.jpeg")
+          no-repeat center !important;
+        background-size: cover !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="custom-cursor"></div>
+
+    <audio id="background-music" autoplay loop muted>
+      <source
+        src="/Where-Our-Hearts-Meet/Love_Journey/Audios/Audio.mp3"
+        type="audio/mpeg"
+      />
+      <source
+        src="/Where-Our-Hearts-Meet/Love_Journey/Audios/Audio.ogg"
+        type="audio/ogg"
+      />
+      <source
+        src="/Where-Our-Hearts-Meet/Love_Journey/Audios/Audio.wav"
+        type="audio/wav"
+      />
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="container">
+      <div>
+        <h1 class="header_text">Can’t Wait to Spend Every Moment with You!</h1>
+      </div>
+      <div class="gif_container">
+        <img
+          src="/Where-Our-Hearts-Meet/Love_Journey/Images/Capoo.gif"
+          alt="Capoo"
+        />
+      </div>
+    </div>
+
+    <script>
+      document.body.addEventListener("click", function () {
+        var audio = document.getElementById("background-music");
+        audio.muted = false;
+        audio.play().catch(function (error) {
+          console.log("Autoplay failed:", error);
+        });
+      });
+    </script>
+    <script src="/Where-Our-Hearts-Meet/Love_Journey/Scripts/Acceptance.js"></script>
+  </body>
+</html>

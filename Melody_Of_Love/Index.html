@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Melody Of Love</title>
+    <link
+      rel="stylesheet"
+      href="/Where-Our-Hearts-Meet/Melody_Of_Love/Styles/Style.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/gif"
+      href="/Where-Our-Hearts-Meet/Melody_Of_Love/Images/Icon.gif"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="hamburger" id="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="nav-links" id="nav-links">
+        <a href="/Where-Our-Hearts-Meet/Our_Story_Begins/Index.html"
+          >Izzeldeen's Heart</a
+        >
+        <a href="/Where-Our-Hearts-Meet/Cupids_Way/Index.html">Cupid's Way</a>
+        <a href="/Where-Our-Hearts-Meet/Love_Notes/Index.html">Love Notes</a>
+        <a href="/Where-Our-Hearts-Meet/Captured_Love/Index.html"
+          >Captured Love</a
+        >
+        <a href="/Where-Our-Hearts-Meet/Eternal_Vow/Index.html">Eternal Vow</a>
+      </div>
+    </nav>
+
+    <div class="custom-cursor"></div>
+
+    <div class="record-player">
+      <div id="player-container"></div>
+      <button id="play-button">Play Our Song</button>
+      <audio
+        id="love-song"
+        src="/Where-Our-Hearts-Meet/Melody_Of_Love/Audios/Mwah.mp3"
+      ></audio>
+      <br />
+      <br />
+      <br />
+      <h4>Let’s Start with the Little Things</h4>
+    </div>
+
+    <script src="/Where-Our-Hearts-Meet/Melody_Of_Love/Scripts/Script.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("nav-links");
+
+        if (hamburger && navLinks) {
+          hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            hamburger.classList.toggle("active");
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

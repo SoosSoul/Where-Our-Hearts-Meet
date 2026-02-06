@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love Wins, Cupid’s Way</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="/Where-Our-Hearts-Meet//Cupids_Way/Styles/PerfectValentine.css"
+    />
+    <link
+      rel="icon"
+      type="image/gif"
+      href="/Where-Our-Hearts-Meet//Cupids_Way/Images/Icon.gif"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="hamburger" id="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="nav-links" id="nav-links">
+        <a href="/Where-Our-Hearts-Meet//Our_Story_Begins/Index.html"
+          >Izzeldeen's Heart</a
+        >
+        <a href="/Where-Our-Hearts-Meet//Love_Notes/Index.html">Love Notes</a>
+        <a href="/Where-Our-Hearts-Meet//Captured_Love/Index.html"
+          >Captured Love</a
+        >
+        <a href="/Where-Our-Hearts-Meet//Melody_Of_Love/Index.html"
+          >Melody Of Love</a
+        >
+        <a href="/Where-Our-Hearts-Meet//Eternal_Vow/Index.html">Eternal Vow</a>
+      </div>
+    </nav>
+
+    <div class="custom-cursor"></div>
+
+    <audio id="background-music" autoplay loop muted>
+      <source
+        src="/Where-Our-Hearts-Meet//Cupids_Way/Audios/Audio.mp3"
+        type="audio/mpeg"
+      />
+      <source
+        src="/Where-Our-Hearts-Meet//Cupids_Way/Audios/Audio.ogg"
+        type="audio/ogg"
+      />
+      <source
+        src="/Where-Our-Hearts-Meet//Cupids_Way/Audios/Audio.wav"
+        type="audio/wav"
+      />
+      Your browser does not support the audio element.
+    </audio>
+
+    <h1>You’ve Found Your Way to My Heart !</h1>
+
+    <img
+      id="hello-kitty"
+      src="/Where-Our-Hearts-Meet//Cupids_Way/Images/Hello-Kitty.gif"
+      alt="Hello Kitty"
+    />
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("nav-links");
+
+        if (hamburger && navLinks) {
+          hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            hamburger.classList.toggle("active");
+          });
+        } else {
+          console.error("Hamburger or nav-links element not found!");
+        }
+
+        document.body.addEventListener("click", function () {
+          var audio = document.getElementById("background-music");
+          if (audio) {
+            audio.muted = false;
+            audio.play().catch(function (error) {
+              console.log("Autoplay failed:", error);
+            });
+          } else {
+            console.error("Audio element not found!");
+          }
+        });
+
+        const cursor = document.querySelector(".custom-cursor");
+        if (cursor) {
+          document.addEventListener("mousemove", (e) => {
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
+          });
+
+          document.addEventListener("mousedown", () => {
+            cursor.style.transform = "translate(-50%, -50%) scale(0.9)";
+          });
+
+          document.addEventListener("mouseup", () => {
+            cursor.style.transform = "translate(-50%, -50%) scale(1)";
+          });
+        } else {
+          console.error("Custom cursor element not found!");
+        }
+      });
+    </script>
+  </body>
+</html>

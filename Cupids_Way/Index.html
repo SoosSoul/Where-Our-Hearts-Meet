@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cupid's Way</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="/Where-Our-Hearts-Meet//Cupids_Way/Styles/Style.css"
+    />
+    <link
+      rel="icon"
+      type="image/gif"
+      href="/Where-Our-Hearts-Meet//Cupids_Way/Images/Icon.gif"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="hamburger" id="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="nav-links" id="nav-links">
+        <a href="/Where-Our-Hearts-Meet//Our_Story_Begins/Index.html"
+          >Izzeldeen's Heart</a
+        >
+        <a href="/Where-Our-Hearts-Meet//Love_Notes/Index.html">Love Notes</a>
+        <a href="/Where-Our-Hearts-Meet//Captured_Love/Index.html"
+          >Captured Love</a
+        >
+        <a href="/Where-Our-Hearts-Meet//Melody_Of_Love/Index.html"
+          >Melody Of Love</a
+        >
+        <a href="/Where-Our-Hearts-Meet//Eternal_Vow/Index.html">Eternal Vow</a>
+      </div>
+    </nav>
+
+    <div class="custom-cursor"></div>
+
+    <audio id="background-music" autoplay loop muted>
+      <source
+        src="/Where-Our-Hearts-Meet//Cupids_Way/Audios/Audio.mp3"
+        type="audio/mpeg"
+      />
+      <source
+        src="/Where-Our-Hearts-Meet//Cupids_Way/Audios/Audio.ogg"
+        type="audio/ogg"
+      />
+      <source
+        src="/Where-Our-Hearts-Meet//Cupids_Way/Audios/Audio.wav"
+        type="audio/wav"
+      />
+      Your browser does not support the audio element.
+    </audio>
+
+    <div id="start-screen">
+      <h1>Cupid's Maze</h1>
+      <button onclick="startGame()">Love Quest Start</button>
+    </div>
+
+    <div id="game-over-screen">
+      <h1>Cupid Failed</h1>
+      <button onclick="restartGame()">Cupid Reset</button>
+    </div>
+
+    <h1 id="heading">Will You Find Your Way To My Heart ?</h1>
+
+    <canvas id="canvas"></canvas>
+
+    <script src="/Where-Our-Hearts-Meet//Cupids_Way/Scripts/Script.js"></script>
+
+    <script>
+      document.body.addEventListener("click", function () {
+        var audio = document.getElementById("background-music");
+        audio.muted = false;
+        audio.play().catch(function (error) {
+          console.log("Autoplay failed:", error);
+        });
+      });
+    </script>
+  </body>
+</html>
