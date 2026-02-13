@@ -143,7 +143,16 @@ document.addEventListener("DOMContentLoaded", () => {
     "98 You make my heart soft",
     "99 You are my forever person",
     "100 I love you simply because you are you",
-    "#1 MMMMMWWWWAAAAHHHHHH",
+    "#1 The way you make me feel happy all the time without even trying just by being yourself and existing in my world",
+    "#2 The way you care for me in the smallest details and notice things about me that no one else ever pays attention to",
+    "#3 The way you love my smile and look at me like it is the most beautiful thing you have ever seen",
+    "#4 The way you gently touch my face and make my heart slow down in the softest safest way",
+    "#5 The way you hold my hand like you never want to let go and make me feel protected and chosen",
+    "#6 The way you say my name so softly and turn it into something that sounds like love",
+    "#7 The way you look into my eyes and make me feel understood without saying a single word",
+    "#8 The way you hug me and make all my worries disappear like nothing else matters in that moment",
+    "#9 The way you get excited about my happiness and celebrate even the smallest things with me",
+    "#10 The way you love me so naturally so deeply and so purely that it feels like fate like home like something written for us long before we ever met and that is why I will always choose you over and over again",
   ];
 
   // --- GENERATE PAGES ---
